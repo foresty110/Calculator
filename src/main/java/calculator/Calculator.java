@@ -1,12 +1,15 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
 
     //연산 결과를 저장하는 컬렉션 타입 필드
-    private List<Double> record;
+    public List<Double> record = new ArrayList<>();
 
+    //TODO
+    // [ ]  연산 결과는 Calculator 클래스의 연산 결과를 저장하는 필드에 저장
     public Double calculate(int num1, int num2, char operator) {
 
         double result = 0;
@@ -22,14 +25,10 @@ public class Calculator {
                 result = num1 * num2;
                 break;
             case '/':
-                if (num2 == 0) {
-                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                    break;
-                }
                 result = (double) num1 / num2;
                 break;
             default:
-                System.out.println("지원하지 않는 연산기호입니다. 다시 입력해 주세요.");
+                System.out.println("연산 기호가 입력되지 않았습니다.");
                 break;
         }
         return result;
