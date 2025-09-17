@@ -66,12 +66,9 @@ public class App {
                 continue;
             }
 
-            //연산 수행
-            double result = calculator.calculate(num1, num2, operator);
-
-            //연산 결과 저장
-            calculator.record.add(result);
-            System.out.println("결과: " + result);
+            //연산 수행 및 결과 저장
+            calculator.setRecord(calculator.calculate(num1, num2, operator));
+            System.out.println("결과: " + calculator.getRecord());
 
             //exit 입력 시 종료
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
