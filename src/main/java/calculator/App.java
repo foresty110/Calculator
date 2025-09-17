@@ -71,12 +71,15 @@ public class App {
             System.out.println("결과: " + calculator.getRecord());
 
             //exit 입력 시 종료
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            System.out.println("메뉴를 선택하세요. \n - exit 입력 시 종료\n - remove 입력 시 가장 먼저 저장된 기록 삭제 및 더 계산하기\n - 그 외 입력 시 더 계산하기 ");
             String finish = sc.nextLine();
+
             if (finish.equals("exit")) {
                 exit = true;
                 System.out.println("계산기를 종료합니다.");
                 break;
+            } else if (finish.equals("remove")) {
+                calculator.removeResult();
             }
         }
 

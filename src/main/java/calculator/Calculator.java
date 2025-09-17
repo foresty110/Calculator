@@ -9,7 +9,7 @@ public class Calculator {
     private List<Double> record = new ArrayList<>();
 
     public Double getRecord() {
-        return record.get(record.size()-1);
+        return record.get(record.size() - 1);
     }
 
     public void setRecord(double recordValue) {
@@ -40,4 +40,14 @@ public class Calculator {
         return result;
     }
 
+    public void removeResult() {
+
+        if (!record.isEmpty()) {
+            System.out.println("가장 먼저 기록된 값 '" + record.get(0) + "'을 삭제합니다.");
+            record.remove(0);
+        } else {
+            System.out.println("삭제할 데이터가 없습니다.");
+        }
+
+    }
 }
