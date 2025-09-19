@@ -48,4 +48,9 @@
   - 삭제하기: 계산이 끝난 후 remove 입력
   - 조회하기: 계산이 끝난 후 find 입력
   - 종료하기: 계산이 끝난 후 exit 입력   
-  
+
+---
+
+### 결과 화면
+<img width="398" height="225" alt="image" src="https://github.com/user-attachments/assets/902777b9-86e2-4e34-b091-491e6a5aa772" />
+
