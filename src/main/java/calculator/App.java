@@ -15,10 +15,10 @@ public class App {
         while (!exit) {
 
             //첫 번째 숫자 입력받기
-            int num1;
+            double num1;
             System.out.print("첫 번째 숫자를 입력하세요: ");
             try {
-                num1 = Integer.parseInt(sc.nextLine());
+                num1 = Double.parseDouble(sc.nextLine());
                 if (num1 < 0) {
                     System.out.println("양의 정수만 입력할 수 있습니다.");
                     continue;
@@ -30,10 +30,10 @@ public class App {
             }
 
             //두 번째 숫자 입력받기
-            int num2;
+            double num2;
             System.out.print("두 번째 숫자를 입력하세요: ");
             try {
-                num2 = Integer.parseInt(sc.nextLine());
+                num2 = Double.parseDouble(sc.nextLine());
                 if (num2 < 0) {
                     System.out.println("양의 정수만 입력할 수 있습니다.");
                     continue;
@@ -91,8 +91,8 @@ public class App {
             } else if (finish.equals("remove")) {
                 arithmeticCalculator.removeResult();
             }
-        }
 
+        }
     }
 }
 
