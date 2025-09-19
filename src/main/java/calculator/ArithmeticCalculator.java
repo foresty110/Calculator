@@ -48,4 +48,13 @@ public class ArithmeticCalculator{ // <T extends Number,S extends Number>{
         }
 
     }
+
+    public void findResult(double target) {
+        if (!record.isEmpty()) {
+            List<Double> findNum = this.record.stream()
+                        .filter(x -> x> target)
+                        .toList();
+            System.out.println(findNum);
+        }
+    }
 }

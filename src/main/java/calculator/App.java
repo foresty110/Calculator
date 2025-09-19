@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        //Calculator calculator = new Calculator();
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
 
         // “exit” 문자열 입력 전까지 무한으로 계산
@@ -81,17 +81,34 @@ public class App {
             System.out.println("결과: " + arithmeticCalculator.getRecord());
 
             //exit 입력 시 종료
-            System.out.println("메뉴를 선택하세요. \n - exit 입력 시 종료\n - remove 입력 시 가장 먼저 저장된 기록 삭제 및 더 계산하기\n - 그 외 입력 시 더 계산하기 ");
+            System.out.println("메뉴를 선택하세요. " +
+                    "\n - exit 입력 시 종료" +
+                    "\n - remove 입력 시 가장 먼저 저장된 기록 삭제 및 더 계산하기" +
+                    "\n - find 입력 시 저장된 결과 중 요청값 보다 큰 결과 찾기" +
+                    "\n - 그 외 입력 시 더 계산하기 ");
             String finish = sc.nextLine();
 
-            if (finish.equals("exit")) {
-                exit = true;
-                System.out.println("계산기를 종료합니다.");
-                break;
-            } else if (finish.equals("remove")) {
-                arithmeticCalculator.removeResult();
+            switch (finish) {
+                case "exit":
+                    exit = true;
+                    System.out.println("계산기를 종료합니다.");
+                    break;
+                case "remove":
+                    arithmeticCalculator.removeResult();
+                    break;
+                case "find":
+                    System.out.println("기준 값을 입력해 주세요.");
+                    double target = 0;
+                    try {
+                        target = Double.parseDouble(sc.nextLine());
+                        arithmeticCalculator.findResult(target);
+                    } catch (NumberFormatException e) {
+                        // 숫자가 아닌 값을 입력했을 경우 예외처리
+                        System.out.println("잘못된 입력입니다. 숫자를 입력해 주세요. 처음으로 되돌아갑니다.");
+                    }
+                    break;
+                default:
             }
-
         }
     }
 }
