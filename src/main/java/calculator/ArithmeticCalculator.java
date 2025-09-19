@@ -3,7 +3,7 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArithmeticCalculator <T extends Number> { // <T extends Number,S extends Number>{
+public class ArithmeticCalculator <T extends Number> implements Calculator{ // <T extends Number,S extends Number>{
 
     //연산 결과를 저장하는 컬렉션 타입 필드
     private List<Double> record = new ArrayList<>();
