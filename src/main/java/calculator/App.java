@@ -8,7 +8,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         //Calculator calculator = new Calculator();
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        ArithmeticCalculator<Double> arithmeticCalculator = new ArithmeticCalculator<Double>();
 
         // “exit” 문자열 입력 전까지 무한으로 계산
         boolean exit = false;
@@ -76,8 +76,8 @@ public class App {
                 continue;
             }
 
-            //연산 수행 및 결과 저장
-            arithmeticCalculator.setRecord(arithmeticCalculator.calculate(num1, num2, operatorType));
+            //연산 수행 및 결과 저장 // 기능과 사용
+            arithmeticCalculator.saveAndCalculate(num1, num2, operatorType);
             System.out.println("결과: " + arithmeticCalculator.getRecord());
 
             //exit 입력 시 종료
